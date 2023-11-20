@@ -30,39 +30,62 @@ html {
 	font-style: normal;
 }
  
-.header {
+
+.page__header {
    display: flex;
    height: 88px;
 	justify-content: space-between;
 	padding: 16px;
 	gap: 16px;
 	border-bottom: 1px #D9FFF5 solid;
+	align-items: center;
 }
- 
-.button {
+
+button, a {
 	background-color: transparent;	
+	cursor: pointer;
+}
+.page__header button {
+	width: 40px;
+	height: 40px;
+}
+
+.header__burger {
+	background-image: url("images/burger.svg");	
+
+}
+
+.page__header .header__group {
+	background-image: url("images/Group.svg");
+	margin-right: auto;
+	width: 97px;
+	height: 50px;	
 }
 
 .header__repair {
-	position: relative;	
+	background-image: url("images/repair.svg");
 }
 
-.header__repair::before{
-	content: "";
-	position: absolute;
-   background-image: url("images/divider.svg");
+.header__call {
+	background-image: url("images/call.svg");
+}
+
+.header__chat {
+	background-image: url("images/chat.svg");
+}
+
+.header__profile {
+	background-image: url("images/profile.svg");
+}
+
+.header__checkstatus {
+	background-image: url("images/checkstatus.svg");
+}
+
+.header__divider {
+	background-image: url("images/divider.svg");
 	width: 2px;
-	height: 32px;
-	left: -20px;
-	top: 11px;
-}
-
-.header__group {
-	margin-right: auto;	
-}
- 
-.header__burger {
-	position: relative;		
+   height: 32px;
 }
 
 .main-page {
@@ -99,13 +122,16 @@ html {
 	display: flex;
 	flex-wrap: nowrap;
 	align-items: center;
-	overflow: scroll;
+	overflow-x: scroll;
 	padding: 0 16px;
+	list-style-type: none;
+	
 }
 
-.services-list__item {
+.services-list__item a {
+	display: block;
 	white-space: nowrap;	
-	padding: 8px 16px;
+	padding: 8px 14px;
 	text-decoration: none;
 	color: #7E7E82;
 	font-family: "TT Lakes";
@@ -114,16 +140,21 @@ html {
 	letter-spacing: -0.20000000298023224px;
 	text-align: left;
 	font-weight: 500;
+	vertical-align: middle;
+}
+
+.services-list__item {
 	height: 40px;
+	border: 2px transparent solid;	
 }
 
 .services-list__item:hover {
-	border: 2px #B8FFEC solid;
+	border: 2px #B8FFEC solid;	
 	border-radius: 6px;
 	background-color: #FFFFFF;	
 }
 
-.text__content {
+.text__content{
 	overflow: hidden;
 	height: 90px;
 	font-family: "TT Lakes";
@@ -132,6 +163,10 @@ html {
 	line-height: 18px;
 	letter-spacing: 0.20000000298023224px;
 	text-align: left;	
+}
+
+.text__content p:not(:first-child) {
+	margin-top: 23px;
 }
 
 .state {
@@ -181,26 +216,13 @@ html {
 
 @media (min-width: 768px) {
 	
-	.header__burger::after {
-		content: "";	
-		position: absolute;
-		background-image: url("images/divider.svg");
-		width: 2px;
-		height: 32px;
-		right: -20px;
-		top: 11px;
+	
+	.header__divider{
+		margin: 0 4px;
 	}
 
 	.item--hidden {
 		display: block;
-	}
-	 
-	.header__profile {
-		margin-right: 26px;
-	}	 
-
-	.header__burger {
-		margin-right: 16px;
 	}
 
 	.header {
@@ -290,6 +312,7 @@ html {
 		flex-wrap: wrap;
 		padding-left: 32px;
 		padding-right: 25px;
+		overflow: visible;
 	}
 
 	.state {
