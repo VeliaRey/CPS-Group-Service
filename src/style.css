@@ -56,7 +56,6 @@ button, a {
 }
 
 .page__header .header__group {
-	background-image: url("images/Group.svg");
 	margin-right: auto;
 	width: 97px;
 	height: 50px;	
@@ -114,7 +113,7 @@ button, a {
 	padding: 24px 16px 24px 0;
 }
 
-.title-line button {
+.button-group  {
 	display: none;
 }
 
@@ -124,8 +123,7 @@ button, a {
 	align-items: center;
 	overflow-x: scroll;
 	padding: 0 16px;
-	list-style-type: none;
-	
+	list-style-type: none;	
 }
 
 .services-list__item a {
@@ -136,7 +134,6 @@ button, a {
 	color: #7E7E82;
 	font-family: "TT Lakes";
 	font-size: 16px;
-	line-height: 24px;
 	letter-spacing: -0.20000000298023224px;
 	text-align: left;
 	font-weight: 500;
@@ -185,9 +182,9 @@ button, a {
 	position: relative;
 	color: #1B1C21;
 	height: 24px;
-	margin-left: 32px;
 	font-size: 16px;
-	margin: 16px 32px;
+	margin-top: 16px;
+	padding-left: 32px;
 	font-family: "TT Lakes";
 	font-weight: 500;
 	font-size: 16px;
@@ -202,7 +199,7 @@ button, a {
 	background-image: url("images/expand.svg");
 	width: 24px;
 	height: 24px;
-	left: -32px;
+	left: 0px;
 	top: 0;
 }
  
@@ -279,9 +276,9 @@ button, a {
 	}
 	
 	.title-line {
-		display: flex;
+		display: flex;	
 		justify-content: space-between;
-		gap:8px;
+		gap: 8px;
 		align-items: center;
 		padding: 42px 32px 8px 0px;
 	}
@@ -291,17 +288,49 @@ button, a {
 		margin-left: 32px;
 	}
 
-	.title-line button{
-		display: contents;
-		font-size: 16px;
-		letter-spacing: -0.20000000298023224px;
-		text-align: right;
-		font-weight: 500;				
-		text-align: center;
+	.button-group {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 32px;
 	}
-	
-	.request__image {
-		margin-right: 32px;
+		
+	.button-group__request,
+	.button-group__status {
+		display: block;		
+		text-align: left;
+		font-family: "TT Lakes";
+		font-size: 16px;
+		line-height: 24px;
+		letter-spacing: -0.20000000298023224px;
+		text-align: left;
+		font-weight: 500;
+	}
+		
+	.button-group__request {
+		width: 173px;
+	}
+
+	.button-group__status {
+		width: 168px;
+	}
+
+	.button-group__request div {
+		background-image: url("images/repair.svg");
+	}
+		
+	.button-group__request div,
+	.button-group__status div {
+		background-size: 40px 40px;
+		width: 100%;
+		height: 40px;
+		background-position: right;
+		background-repeat: no-repeat;
+		line-height: 40px;
+	}
+		
+	.button-group__status div {
+		background-image: url("images/checkstatus.svg");
 	}
 
 	.title-line__title::before {
